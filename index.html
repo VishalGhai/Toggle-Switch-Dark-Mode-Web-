@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body id="bod" style="background-color: black;">
+    <h1 style="color: rgb(55, 140, 214);margin: auto;text-align: center;margin-top: 10%;">Toggle Dark mode</h1>
+    <div id="hello"></div>
+    <script src="lottie.js" type="text/javascript"></script>
+    <script>
+        var animatio = bodymovin.loadAnimation({
+            container: document.getElementById('hello'),
+            renderer:'svg',
+            loop:false,
+            autoplay:false,
+            path:'data.json'
+        });
+        animatio.setSpeed(5);
+        var dark = 0;
+        var btn = document.getElementById("hello");
+        btn.addEventListener('click',function(){
+            if(dark==0){
+            animatio.play();
+            animatio.setDirection(1);
+            document.getElementById('bod').style.animation = "back 1s 1 forwards";
+            dark=1;
+        }else{
+            animatio.play();
+            animatio.setDirection(-1);
+            document.getElementById('bod').style.animation = "back 1s 1 forwards reverse";
+            dark=0;
+        }
+        })
+
+    </script>
+</body>
+</html>
